@@ -1,4 +1,4 @@
-# # # # # Begin docker related section # # # # #
+# # # # # Begin docker image creation related section # # # # #
 
 IMAGE_NAME := overlydev/hugo
 CONTEXT_DIR := docker/_context
@@ -13,7 +13,17 @@ docker_context:
 image: docker_context
 	cd $(CONTEXT_DIR) && docker build -t $(IMAGE_NAME) .
 
-run: image
-	docker run --rm -it -v $(shell pwd):/host -u $(USER) $(IMAGE_NAME)
+# # # # # End docker image creation related section # # # # #
 
-# # # # # End docker related section # # # # #
+# # # # # Begin hugo specific section # # # # #
+
+hugo_exec:
+	docker run --rm -it -v $(shell pwd):/host -u $(USER) -w /host/site $(IMAGE_NAME)
+
+hugo_serve:
+	docker run --name hugo_serve --rm -it -v $(shell pwd):/host -u $(USER) -w /host/site -p 1313:1313 $(IMAGE_NAME) hugo server -DEF --enableGitInfo  --bind 0.0.0.0
+
+hugo_build:
+	docker run --rm -d -v $(shell pwd):/host -u $(USER) -w /host/site $(IMAGE_NAME) hugo --gc --minify
+
+# # # # # End hugo specific section # # # # #
