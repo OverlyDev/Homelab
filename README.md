@@ -6,3 +6,10 @@
 - https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/
 - https://ricard.dev/moving-from-docusaurus-to-hugo/
 - https://ricard.dev/how-to-add-purgecss-to-hugo/
+
+## Themes
+
+Pick one at some point
+
+- https://themes.gohugo.io/themes/beautifulhugo/
+- https://themes.gohugo.io/themes/hugo-papermod/
