@@ -37,7 +37,7 @@ RUN cd /tmp && \
     curl --fail -sL https://go.dev/dl/go${GO_VERSION}.linux-$(dpkg --print-architecture).tar.gz | tar -xzf - go
 
 # This is the final stage
-FROM ${BASE_IMAGE}
+FROM ${BASE_IMAGE} as final
 
 # Pull in package list
 COPY apt-final.txt /tmp/apt-final.txt
@@ -64,3 +64,5 @@ VOLUME [ "/host" ]
 
 # Set the workdir to the volume for convenience
 WORKDIR /host
+
+EXPOSE 1313
