@@ -21,9 +21,12 @@ hugo_exec:
 	docker run --rm -it -v $(shell pwd):/host -u $(USER) -w /host/site $(IMAGE_NAME)
 
 hugo_serve:
-	docker run --name hugo_serve --rm -it -v $(shell pwd):/host -u $(USER) -w /host/site -p 1313:1313 $(IMAGE_NAME) hugo server -DEF --enableGitInfo  --bind 0.0.0.0
+	docker run --name hugo_serve --rm -it -v $(shell pwd):/host -u $(USER) -w /host/site -p 1313:1313 $(IMAGE_NAME) hugo server -DEF --bind 0.0.0.0
 
 hugo_build:
 	docker run --rm -d -v $(shell pwd):/host -u $(USER) -w /host/site $(IMAGE_NAME) hugo --gc --minify
+
+hugo_clean:
+	cd site && rm -rf public resources .hugo_build.lock
 
 # # # # # End hugo specific section # # # # #
