@@ -1,0 +1,29 @@
+baseURL: https://OverlyDev.github.io/Homelab/
+languageCode: en-us
+title: OverlyDev Homelab
+theme: hugo-PaperMod
+
+menus:
+  main:
+    - identifier: posts
+      name: Posts
+      pageRef: /posts/
+      weight: 10
+    - identifier: about
+      name: About
+      pageref: /about/
+      weight: 100
+
+params:
+  profileMode:
+    enabled: true
+    title: Welcome # optional default will be site title
+    subtitle: There's some stuff about things so feel free to poke around!
+    # imageUrl: "<image link>" # optional
+    # imageTitle: "<title of image as alt>" # optional
+    # imageWidth: 120 # custom size
+    # imageHeight: 120 # custom size
+
+  # socialIcons: # optional
+  #   - name: Github
+  #     url: https://github.com/OverlyDev/Homelab
