@@ -39,15 +39,6 @@ RUN cd /tmp && \
 # This is the final stage
 FROM ${BASE_IMAGE} as final
 
-# Pull in package list
-COPY apt-final.txt /tmp/apt-final.txt
-
-# Install required packages
-RUN apt update && xargs -a /tmp/apt-final.txt apt install -y && \
-    apt autoclean && \
-    apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/*
-
 # Steal Hugo from the downloader stage
 COPY --from=downloader /tmp/hugo /usr/local/bin/hugo
 
@@ -58,6 +49,15 @@ ENV PATH="${PATH}:/usr/local/dart-sass"
 # Steal Go from the downloader stage and set PATH
 COPY --from=downloader /tmp/go /usr/local
 ENV PATH="${PATH}:/usr/local/go/bin"
+
+# Pull in package list
+COPY apt-final.txt /tmp/apt-final.txt
+
+# Install required packages
+RUN apt update && xargs -a /tmp/apt-final.txt apt install -y && \
+    apt autoclean && \
+    apt autoremove -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/*
 
 # This volume is expected to be mounted when running the container
 VOLUME [ "/host" ]
