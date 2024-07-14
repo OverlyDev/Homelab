@@ -1,2 +1,3 @@
 git
 bash-completion
+exiv2
