@@ -21,6 +21,10 @@ params:
   # Always dark mode
   defaultTheme: dark
   disableThemeToggle: true
+
+  # Reading time on pages
+  #   disable on pages with params:showReadingTime: false
+  showReadingTime: true
   
   # Clean up the home page
   profileMode:
