@@ -5,7 +5,7 @@ draft: false
 cover:
     image: "computer.jpg"
     alt: "Inside of a computer"
-    caption: ""
+    caption: "Personal computer circa Jan 2022"
 ---
 
 This page will give examples and ideas for homelab hardware. It starts basic and works its way up to hopefully give a good spread of options for everyone.
@@ -59,11 +59,11 @@ This section outlines some purchasing options for that will deliver great value,
 
 ### Mini PCs - Dell & HP
 
-There's a ton of used mini PCs all over online marketplaces. These devices provide a significant value since they're pretty potent for their form factor and can be obtained cheaply compared to new devices.
+There's a ton of used mini PCs all over online marketplaces, with HP and Dell being popular OEMs. These devices provide a significant value since they're pretty potent for their form factor and can be obtained cheaply compared to new devices. 
 
-The ServeTheHome forum has an ongoing [TinyMiniMicro](https://www.servethehome.com/introducing-project-tinyminimicro-home-lab-revolution/) project where various options are tested and reviewed. This project, and the forums in general, are a great resource for these devices.
+The ServeTheHome forum has an ongoing [TinyMiniMicro](https://www.servethehome.com/introducing-project-tinyminimicro-home-lab-revolution/) project where various options are tested and reviewed. This project, and the forums in general, are a great resource for these devices. They also have a handy [reference thread](https://forums.servethehome.com/index.php?threads/lenovo-thinkcentre-thinkstation-tiny-project-tinyminimicro-reference-thread.34925/) for HP Tiny machines!
 
-Two popular OEMs are Dell and HP, both of which have long lineups of devices with varying capabilities. I'm more in-the-loop on Dell devices so I'll provide some information about them specifically below:
+I'm more in-the-loop on Dell devices so I can provide some information about them specifically below:
 
 - Dell Optiplex comes in 3 typical sizes:
     - Tower
@@ -166,10 +166,11 @@ There's various calculators you can [find on the internet](https://letmegoogleth
 One differentiator between offerings is the [80 Plus rating](https://en.wikipedia.org/wiki/80_Plus), which is the measured efficiency at various load percentages.
 
 The key points for this section are:
-- Power supplies don't pull their rated capacity 24/7
-    - Your 1400W PSU isn't pulling 1400W continuously, it's only pulling what the computer needs
-- Aim for at least a `Gold` rated PSU
+- Power supplies don't pull their rated capacity 24/7.
+    - Your 1400W PSU isn't pulling 1400W continuously, it's only pulling what the computer needs.
+- Aim for at least a `Gold` rated PSU.
     - The price premium for higher rated power supplies takes a *long* time to amortize.
-- Size it appropriately
+- Size it appropriately.
     -  You don't want to buy a 1000W PSU for a device that's only ever drawing 200W, the efficiency will be terrible.
-    - Planning for growth is fine
+    - Account for the power draw from any spinning hard drives, it can quickly add up.
+    - Planning for growth is fine.
