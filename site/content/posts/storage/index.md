@@ -103,7 +103,7 @@ Some options are:
 
 ## Custom NAS
 
-At this point, we're approaching the cream of the crop when it comes to storage. This option is typically a custom-built server (see [Building PCs](/posts/hardware#building-pcs)) running a dedicated "NAS operating system".
+At this point, we're approaching the cream of the crop when it comes to storage. This option is typically a custom-built server (see [Building PCs]( {{< ref "posts/hardware#building-pcs" >}} )) running a dedicated "NAS operating system".
 
 There's a **lot** of variables to consider when selecting hardware for a dedicated NAS so I recommend going for a long walk on the internet before making any decisions.
 
