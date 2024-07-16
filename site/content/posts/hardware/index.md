@@ -3,7 +3,7 @@ title: "Hardware"
 date: "2024-07-13T21:30:08Z"
 draft: false
 cover:
-    image: "images/hardware/computer.jpg"
+    image: "computer.jpg"
     alt: "Inside of a computer"
     caption: ""
 ---
@@ -70,7 +70,7 @@ Two popular OEMs are Dell and HP, both of which have long lineups of devices wit
     - Small Form Factor (SFF)
     - Micro Form Factor (MFF)
 
-![tower-sff-mff](images/hardware/tower-sff-mff.jpg)
+![tower-sff-mff](tower-sff-mff.jpg)
 
 - The MFF devices are my personal favorite as they only have a 7"H x 7"W ~1.5"D footprint.
 
