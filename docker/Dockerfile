@@ -42,6 +42,10 @@ FROM ${BASE_IMAGE} as final
 # Steal Hugo from the downloader stage
 COPY --from=downloader /tmp/hugo /usr/local/bin/hugo
 
+# Configure completion for Hugo
+RUN mkdir -p /etc/bash_completion.d && \
+    hugo completion bash > /etc/bash_completion.d/hugo
+
 # Steal Dart Sass from the downloader stage and set PATH
 COPY --from=downloader /tmp/dart-sass /usr/local/dart-sass/
 ENV PATH="${PATH}:/usr/local/dart-sass"
