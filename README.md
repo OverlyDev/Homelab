@@ -12,3 +12,14 @@
 
 - `exiv2 -pa pr <image>` - shows all info in image
 - `exiv2 -da rm <image>` - removes all info from image
+
+## Hugo Stuff
+
+Here's a summary of the various modifications made to Hugo, as well as their sources.
+
+### Theme
+- [PaperMod](https://github.com/adityatelange/hugo-PaperMod/)
+
+### Tweaks
+- https://github.com/arashsm79/hugo-PaperMod-Mod
+    - Thumbnail sizing
