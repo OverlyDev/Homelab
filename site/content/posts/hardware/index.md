@@ -65,12 +65,12 @@ The ServeTheHome forum has an ongoing [TinyMiniMicro](https://www.servethehome.c
 
 Two popular OEMs are Dell and HP, both of which have long lineups of devices with varying capabilities. I'm more in-the-loop on Dell devices so I'll provide some information about them specifically below:
 
-- Dell Optiplex comes in 3 typical sizes (left to right below):
+- Dell Optiplex comes in 3 typical sizes:
     - Tower
     - Small Form Factor (SFF)
     - Micro Form Factor (MFF)
 
-![tower-sff-mff](tower-sff-mff.jpg)
+![tower vs sff vs mff](tower-sff-mff.jpg "Tower → SFF → MFF")
 
 - The MFF devices are my personal favorite as they only have a 7"H x 7"W ~1.5"D footprint.
 

@@ -27,3 +27,8 @@ params:
     enabled: true
     title: Welcome
     subtitle: There's some stuff about things so feel free to poke around!
+
+markup:
+  goldmark:
+    parser:
+      wrapStandAloneImageWithinParagraph: false
