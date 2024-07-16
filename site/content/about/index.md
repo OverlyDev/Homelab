@@ -1,3 +1,8 @@
+---
+params:
+    showReadingTime: false
+---
+
 # About this site
 
 This site is definitely a **work in progress**!
