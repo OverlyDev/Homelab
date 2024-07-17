@@ -6,6 +6,8 @@ cover:
     image: "computer.jpg"
     alt: "Inside of a computer"
     caption: "Personal computer circa Jan 2022"
+ShowToc: true
+TocOpen: true
 ---
 
 This page will give examples and ideas for homelab hardware. It starts basic and works its way up to hopefully give a good spread of options for everyone.
@@ -105,6 +107,8 @@ There's also other mini PC options out there. Various manufacturers have their h
 
 ### Building PCs
 
+![first-build](first-build.jpg "First PC build with new components ca. 2011")
+
 An alternative avenue is building exactly the computer(s) you want/need. Mind you, this isn't your typical gaming PC, so things will be a little different.
 
 I won't go into detail for every component but I will give some information for key components. The rest is up to your discretion.
@@ -174,3 +178,75 @@ The key points for this section are:
     -  You don't want to buy a 1000W PSU for a device that's only ever drawing 200W, the efficiency will be terrible.
     - Account for the power draw from any spinning hard drives, it can quickly add up.
     - Planning for growth is fine.
+
+## Going crazy
+
+![dell-r620](dell-r620.jpg "Dell R620 internals")
+
+This section is when you don't really care about power usage, thermals, and/or noise. The options here deliver huge amounts of compute in very compact form factors, which is why they've been used in datacenters for many many years. Yes, you've probably guessed it, we're talking rackmount servers!
+
+This section is assuming you're not going out and purchasing brand new equipment from one of the many OEMs, as that's way beyond the scope of what I'm covering here. If that's what you're doing please go talk to your vender representative.
+
+Now that the highrollers have gone, let's talk used enterprise servers. There's a significant secondary market for servers that have been retired out of datacenters. Large companies have large budgets which usually entail some sort of regular tech refresh. This means all that juicy "old" hardware ends up on eBay, various resellers, etc.
+
+The server pictured at the top of this section is a Del R620 with:
+
+- CPU: 2x [Intel Xeon E5-2660 v2](https://www.intel.com/content/www/us/en/products/sku/75272/intel-xeon-processor-e52660-v2-25m-cache-2-20-ghz/specifications.html) (10C 20T each)
+- RAM: 192GB ECC DDR-3 (I forget the speed)
+- Storage: Various SSDs/HDDs that were laying around
+
+It worked quite well as a [Proxmox](https://www.proxmox.com/en/) virtualization server but the noise/heat/power consumption made it hard to keep on 24/7. We're gonna talk about that!
+
+### Know what you're getting into
+
+One of the main things to keep in mind when you're deliberating used enterprise equipment is that it was designed to be in a rack. This has multiple ramifications:
+
+- Rackmount
+    - You need a rack, really, otherwise it's a pain trying to figure out where to put them.
+- Thermals/Noise
+    - These servers were designed to be operated in a full rack with many neighboring servers.
+    - *Lots* of heat is pumped out the back.
+    - There's usually a lot of fans, spinning very fast, pushing a lot of air, very loudly.
+- Power usage
+    - For anything more than a couple servers, you're likely going to need some dedicated electrical work done
+        - Household circuits in the US typically have 15A or 20A circuits
+        - Common practice is to stay below 80% of a breaker's rated capacity
+        - Doing some math, `Watts = Amps x Voltage`
+        - `15A x 120V = 1800W` → `1800W x 0.8 = 1440W` safe watts
+        - Keep in mind there may be other devices on that circuit
+
+Now that you've thoroughly considered these details, done some calculations, etc. let's talk options.
+
+### Form factor
+
+Servers are categorized into a unit of measurement `U`, which signifies how many "Rack Units" of space the server takes up (vertically), with `1U` being 1.75" high. Common sizes range from `1U` up to `4U` but there are definitely larger servers out there.
+
+Important notes about the form factor are:
+
+- Noise
+    - `1U` servers need to push a lot of air through a small, densely-packed space. This results in lots of 40mm fans spinning at high RPMs which makes them sound like jets.
+        - See the row of 7 double-stacked 40mm fans in the picture at the [top of this section](#going-crazy)
+    - As the height of the server grows, the fans get larger, spin slower, and are somewhat quieter
+    - Overall, homelabs have a lower load on the server which tends to quiet things down, except for the first couple minutes of the server turning on
+
+- Expansion
+    - As servers get taller, you get more options for PCIe cards, storage, etc.
+        - Not that it's non-existent in `1U` servers, the one pictured above can hold 2 single-slot cards
+
+### Brands
+
+There's quite a few server manufacturers out there, but from what I've seen the big 3 are:
+
+- Dell
+- HP
+- Supermicro
+
+Each company has their own merits so I'll let you do some research about which one(s) may suit your needs best. I like Supermicro's datasheets and information they provide about each server, there's some good information and part numbers that are otherwise hard to track down with other brands.
+
+### Where to buy
+
+Oh boy, there's so many places you can find this stuff; I'm sure just searching `Used server reseller` or similar will yield many results.
+
+I purchased the Dell server above from an Ebay seller a couple years ago for a pretty good price. Another site I've been keeping my eye on is [TheServerStore](https://www.theserverstore.com/). They have a lot of options and regularly have sales on various configurations. If you prefer Ebay, they also list things there.
+
+At some point I'll put together a single page with a whole bunch of links for things.
