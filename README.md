@@ -2,6 +2,7 @@
 
 ## WIP References
 
+- https://www.youtube.com/watch?v=hjD9jTi_DQ4
 - https://gohugo.io/installation/linux/
 - https://gohugo.io/hugo-pipes/transpile-sass-to-css/#dart-sass
 - https://developers.cloudflare.com/pages/framework-guides/deploy-a-hugo-site/
@@ -12,6 +13,10 @@
 
 - `exiv2 -pa pr <image>` - shows all info in image
 - `exiv2 -da rm <image>` - removes all info from image
+
+## Draw.io diagrams
+
+- https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio
 
 ## Hugo Stuff
 
