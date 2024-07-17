@@ -1,5 +1,9 @@
 # Homelab
 
+Also available at: https://overlydev-homelab.pages.dev/
+
+- The `About` page doesn't go anywhere though, need to investigate that.
+
 ## WIP References
 
 - https://www.youtube.com/watch?v=hjD9jTi_DQ4
