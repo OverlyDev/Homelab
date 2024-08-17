@@ -1,5 +1,5 @@
 # The base image for all stages
-ARG BASE_IMAGE=ubuntu:24.04
+ARG BASE_IMAGE=alpine:3.20.2
 
 # Use a dedicated stage for downloading required dependencies
 FROM ${BASE_IMAGE} as downloader
@@ -8,14 +8,8 @@ FROM ${BASE_IMAGE} as downloader
 ARG BUILDOS
 ARG BUILDARCH
 
-# Pull in package list for downloader stage
-COPY apt-downloader.txt /tmp/apt-downloader.txt
-
-# Install required packages
-RUN apt update && xargs -a /tmp/apt-downloader.txt apt install -y && \
-    apt autoclean && \
-    apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/*
+# Install packages required for downloader
+RUN apk add --no-cache curl tar
 
 # Grab Hugo at specified version
 ARG HUGO_VERSION=0.128.2
@@ -27,13 +21,8 @@ RUN cd /tmp && \
 # Grab Dart Sass at specified version
 ARG DART_SASS_VERSION=1.77.8
 RUN cd /tmp && \
-    curl --fail -sL https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-${BUILDOS}-$(dpkg --print-architecture).tar.gz \
+    curl --fail -sL https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-${BUILDOS}-${BUILDARCH}.tar.gz \
         | tar -xzf -
-
-# Grab Go at specified version
-ARG GO_VERSION=1.22.5
-RUN cd /tmp && \
-    curl --fail -sL https://go.dev/dl/go${GO_VERSION}.${BUILDOS}-$(dpkg --print-architecture).tar.gz | tar -xzf - go
 
 # This is the final stage
 FROM ${BASE_IMAGE} as final
@@ -49,18 +38,8 @@ RUN mkdir -p /etc/bash_completion.d && \
 COPY --from=downloader /tmp/dart-sass /usr/local/dart-sass/
 ENV PATH="${PATH}:/usr/local/dart-sass"
 
-# Steal Go from the downloader stage and set PATH
-COPY --from=downloader /tmp/go /usr/local
-ENV PATH="${PATH}:/usr/local/go/bin"
-
-# Pull in package list
-COPY apt-final.txt /tmp/apt-final.txt
-
 # Install required packages
-RUN apt update && xargs -a /tmp/apt-final.txt apt install -y && \
-    apt autoclean && \
-    apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/*
+RUN apk add --no-cache bash bash-completion exiv2 git
 
 # This volume is expected to be mounted when running the container
 VOLUME [ "/host" ]
@@ -68,4 +47,8 @@ VOLUME [ "/host" ]
 # Set the workdir to the volume for convenience
 WORKDIR /host
 
+# Expose port for hugo
 EXPOSE 1313
+
+# Default command of bash because sh is annoying
+CMD [ "/bin/bash" ]

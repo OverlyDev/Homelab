@@ -1,4 +1,3 @@
-docker/_context
 site/public
 site/resources
 site/*.lock
