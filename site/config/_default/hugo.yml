@@ -12,9 +12,13 @@ menus:
       name: Posts
       pageRef: /posts/
       weight: 10
+    - identifier: ideas
+      name: Ideas
+      pageRef: /ideas-and-inspiration/
+      weight: 20
     - identifier: about
       name: About
-      pageref: /about/
+      pageRef: /about/
       weight: 100
 
 params:
@@ -25,7 +29,7 @@ params:
   # Reading time on pages
   #   disable on pages with params:showReadingTime: false
   showReadingTime: true
-  
+
   # Clean up the home page
   profileMode:
     enabled: true
