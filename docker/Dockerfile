@@ -21,7 +21,8 @@ RUN cd /tmp && \
 # Grab Dart Sass at specified version
 ARG DART_SASS_VERSION=1.77.8
 RUN cd /tmp && \
-    curl --fail -sL https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-${BUILDOS}-${BUILDARCH}.tar.gz \
+    if [[ ${BUILDARCH} == "amd64" ]]; then export arch=x64; else export arch=${BUILDARCH}; fi && \
+    curl --fail -sL https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-${BUILDOS}-$arch.tar.gz \
         | tar -xzf -
 
 # This is the final stage
