@@ -1,4 +1,6 @@
-baseURL: https://OverlyDev.github.io/Homelab/
+# The baseURL is set during the deployment on GitHub/Cloudflare pages
+#   and not actually necessary to set here, which makes local testing simpler
+# baseURL: https://OverlyDev.github.io/Homelab/
 languageCode: en-us
 title: OverlyDev Homelab
 theme: ["hugo-notice", "hugo-PaperMod"]
@@ -40,4 +42,5 @@ params:
 markup:
   goldmark:
     parser:
+      # Sauce: https://gohugo.io/getting-started/configuration-markup/#parserwrapstandaloneimagewithinparagraph
       wrapStandAloneImageWithinParagraph: false
