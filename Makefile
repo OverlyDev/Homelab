@@ -1,10 +1,9 @@
 # # # # # Begin docker image creation related section # # # # #
 
 IMAGE_NAME := overlydev/hugo
-CONTEXT_DIR := docker/_context
 USER := $(shell id -u):$(shell id -g)
 
-image: 
+image:
 	docker build -t $(IMAGE_NAME) ./docker
 
 # # # # # End docker image creation related section # # # # #
