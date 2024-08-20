@@ -1,8 +1,9 @@
 # Homelab
 
-Also available at: https://overlydev-homelab.pages.dev/
+Here's links to the rendered site:
 
-- The `About` page doesn't go anywhere though, need to investigate that.
+- GitHub Pages - https://overlydev.github.io/Homelab/
+- Cloudflare Pages - https://overlydev-homelab.pages.dev/
 
 ## WIP References
 
