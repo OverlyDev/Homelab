@@ -1,7 +1,7 @@
 baseURL: https://OverlyDev.github.io/Homelab/
 languageCode: en-us
 title: OverlyDev Homelab
-theme: hugo-PaperMod
+theme: ["hugo-notice", "hugo-PaperMod"]
 
 # Check on this later
 enableGitInfo: true

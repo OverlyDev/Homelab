@@ -32,3 +32,5 @@ Here's a summary of the various modifications made to Hugo, as well as their sou
 ### Tweaks
 - https://github.com/arashsm79/hugo-PaperMod-Mod
     - Thumbnail sizing
+- https://github.com/martignoni/hugo-notice
+    - Pretty notices
