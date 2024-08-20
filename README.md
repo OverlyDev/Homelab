@@ -29,6 +29,7 @@ Here's a summary of the various modifications made to Hugo, as well as their sou
 
 ### Theme
 - [PaperMod](https://github.com/adityatelange/hugo-PaperMod/)
+  - [Favicon instructions](https://adityatelange.github.io/hugo-PaperMod/posts/papermod/papermod-faq/#adding-custom-favicons)
 
 ### Tweaks
 - https://github.com/arashsm79/hugo-PaperMod-Mod
