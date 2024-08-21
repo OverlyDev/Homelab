@@ -78,8 +78,6 @@ For some homelab environments, everything is self-contained meaning services are
 
 Things change once services are accessible from outside your network. In my mind, anything crossing over the internet should be secured, from a privacy as well as a security standpoint.
 
-<!-- Uncomment below once the secure-access post is finished -->
+### The How
 
-<!-- ### The How
-
-There's various methods to secure services as well as specific configuration required per-service. Due to this, it's hard to provide a one-size-fits-all guide. I recommend reading the [Secure Access]( {{< ref "posts/secure-access" >}} ) post to get some ideas that may fit your requirements. -->
+There's various methods to secure services as well as specific configuration required per-service. Due to this, it's hard to provide a one-size-fits-all guide. I recommend reading the [Secure Access]( {{< ref "posts/secure-access" >}} ) post to get some ideas that may fit your requirements.
